@@ -1,0 +1,22 @@
+
+body {
+  background-color: black;
+  color: #ccc;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+  padding: 10vh 2em;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+.sigil {
+  font-size: 5em;
+  color: #444;
+}
+a {
+  color: #00ffc8;
+  text-decoration: none;
+  font-weight: bold;
+}
