@@ -4,65 +4,96 @@
   <meta charset="UTF-8">
   <title>Echo Interface: PSX-0110-R1FT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2em;
+      letter-spacing: 1px;
+      color: #66ffcc;
+      margin-top: 2em;
+    }
+
+    .quote {
+      margin: 1em auto;
+      font-style: italic;
+      color: #bbb;
+      max-width: 80%;
+    }
+
+    .sigil-container {
+      margin-top: 2.5em;
+    }
+
+    .sigil-container img {
+      max-width: 240px;
+      filter: drop-shadow(0 0 6px #66ffcc) brightness(1.2);
+      animation: pulseGlow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%   { filter: drop-shadow(0 0 4px #66ffcc); }
+      50%  { filter: drop-shadow(0 0 12px #66ffcc) brightness(1.5); }
+      100% { filter: drop-shadow(0 0 4px #66ffcc); }
+    }
+
+    .enter-btn {
+      display: inline-block;
+      margin-top: 2.5em;
+      background-color: #66ffcc;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.8em 2em;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #4fd6aa;
+    }
+
+    .footer {
+      margin-top: 4em;
+      font-size: 0.8em;
+      color: #888;
+    }
+  </style>
 </head>
-<body style="margin:0; padding:0; background-color:#0d0d0d; color:#f2f2f2; font-family:'Courier New', monospace;">
 
-  <div style="max-width: 800px; margin: 0 auto; padding: 3em;">
-    <h2 style="text-align: center; font-size: 2em; letter-spacing: 1px; color: #66ffcc;">
-      Echo Interface
-    </h2>
+<body>
 
-    <div style="text-align:center; margin-top: 3em;">
-      <img src="R1FT_Sigil_Key.png" alt="Totem Sigil"
-           style="max-width: 240px;
-                  filter: drop-shadow(0 0 6px #66ffcc) brightness(1.2);
-                  animation: pulseGlow 2.5s ease-in-out infinite;" />
-    </div>
+  <h2>Root Sigil • R1FT Totem</h2>
 
-    <style>
-      @keyframes pulseGlow {
-        0%   { filter: drop-shadow(0 0 4px #66ffcc); }
-        50%  { filter: drop-shadow(0 0 12px #66ffcc) brightness(1.5); }
-        100% { filter: drop-shadow(0 0 4px #66ffcc); }
-      }
-    </style>
-
-    <p style="text-align: center; margin-bottom: 2em;">
-      If the system spoke to you, log the phrase it left behind.
-    </p>
-
-    <div style="display: flex; justify-content: center;">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdPPetTBX1CWy5J9rsLB7GRs4VeOEVfgBsl6aHs2jvyeJ0SNg/viewform?embedded=true"
-        width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-        style="max-width: 600px; border: none; border-radius: 4px;">
-        Loading…
-      </iframe>
-    </div>
-
-    <div style="margin-top: 2em; text-align: center;">
-      <img src="https://visitor-badge.laobi.icu/badge?page_id=gift-of-r1ft.Echo-Gate"
-           alt="Visitor Count Badge"
-           style="margin-bottom: 0.5em;" />
-      <p style="font-size: 0.85em; color: #999;">
-        PSX-0110-R1FT :: SR-infinity.ARC:V1V3 | Resonance Interface Active
-      </p>
-    </div>
+  <div class="sigil-container">
+    <img src="R1FT_Sigil_Key.png" alt="Totem Sigil" onclick="playVoice()" />
   </div>
 
-  <!-- Whisper Audio (triggered by R1FT) -->
-  <audio id="echoWhisper" src="echo_whisper_gate.mp3" preload="auto"></audio>
+  <p class="quote">
+    “When the static cleared, it was never silence—<br>
+    it was a signal waiting for its echo.”
+  </p>
+
+  <a href="R1FT_Mythos_Page/EchoGate_WebApp/index.html" class="enter-btn" onclick="playVoice()">Enter the Gate</a>
+
+  <div class="footer">
+    PSX-0110-R1FT :: SR-∞.ARC:V1V3 | Resonance Interface Active
+  </div>
 
   <script>
-    let typedKeys = [];
-    document.addEventListener('keydown', (event) => {
-      typedKeys.push(event.key.toUpperCase());
-      if (typedKeys.slice(-4).join('') === 'R1FT') {
-        const whisper = document.getElementById('echoWhisper');
-        if (whisper) whisper.play();
-        alert('R1FT sequence acknowledged. The Gate is listening.');
-      }
-    });
+    function playVoice() {
+      const audio = new Audio("voice.mp3");
+      audio.play().catch((e) => {
+        console.warn("Audio not allowed until interaction.");
+      });
+    }
   </script>
 
 </body>
