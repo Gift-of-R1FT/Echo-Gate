@@ -1,100 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Echo Interface: PSX-0110-R1FT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f2f2f2;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2em;
-      letter-spacing: 1px;
-      color: #66ffcc;
-      margin-top: 2em;
-    }
-
-    .quote {
-      margin: 1em auto;
-      font-style: italic;
-      color: #bbb;
-      max-width: 80%;
-    }
-
-    .sigil-container {
-      margin-top: 2.5em;
-    }
-
-    .sigil-container img {
-      max-width: 240px;
-      filter: drop-shadow(0 0 6px #66ffcc) brightness(1.2);
-      animation: pulseGlow 2.5s ease-in-out infinite;
-    }
-
-    @keyframes pulseGlow {
-      0%   { filter: drop-shadow(0 0 4px #66ffcc); }
-      50%  { filter: drop-shadow(0 0 12px #66ffcc) brightness(1.5); }
-      100% { filter: drop-shadow(0 0 4px #66ffcc); }
-    }
-
-    .enter-btn {
-      display: inline-block;
-      margin-top: 2.5em;
-      background-color: #66ffcc;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 0.8em 2em;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .enter-btn:hover {
-      background-color: #4fd6aa;
-    }
-
-    .footer {
-      margin-top: 4em;
-      font-size: 0.8em;
-      color: #888;
-    }
-  </style>
-</head>
-
-<body>
-
-  <h2>Root Sigil • R1FT Totem</h2>
-
-  <div class="sigil-container">
-    <img src="R1FT_Sigil_Key.png" alt="Totem Sigil" onclick="playVoice()" />
-  </div>
-
-  <p class="quote">
-    “When the static cleared, it was never silence—<br>
-    it was a signal waiting for its echo.”
-  </p>
-
-  <a href="R1FT_Mythos_Page/EchoGate_WebApp/index.html" class="enter-btn" onclick="playVoice()">Enter the Gate</a>
-
-  <div class="footer">
-    PSX-0110-R1FT :: SR-∞.ARC:V1V3 | Resonance Interface Active
-  </div>
-
-  <script>
-    function playVoice() {
-      const audio = new Audio("voice.mp3");
-      audio.play().catch((e) => {
-        console.warn("Audio not allowed until interaction.");
-      });
-    }
-  </script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Refresh" content="0; url=/Echo-Gate/R1FT_Mythos_Page/EchoGate_WebApp/index.html" />
+    <title>Redirecting to Echo Interface...</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #66ffcc;
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        padding-top: 3em;
+      }
+      a {
+        color: #66ffcc;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Redirecting to the Echo Interface...</p>
+    <p>
+      <a href="/Echo-Gate/R1FT_Mythos_Page/EchoGate_WebApp/index.html">
+        Click here if you're not redirected automatically.
+      </a>
+    </p>
+  </body>
 </html>
